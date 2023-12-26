@@ -4,6 +4,9 @@ import groovyx.net.http.RESTClient
 
 def callYourGetApi(String jobName) {
     try {
+        def restClientScript = new File("/home/pravallika/Jekins-event-listener/groovy-events-listener-plugin/src/main/site/includes/RestClient.groovy")
+        def restClientClass = evaluate(restClientScript)
+
         def getRestClient = new RESTClient('http://localhost:8096')
         def headers = [
             'Content-Type': 'application/json',
